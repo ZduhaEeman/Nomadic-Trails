@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nomadic Trails: Discover Nigeria, Nepal & Afghanistan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --lavender: #E6E6FA;
+      --light-blue: #DDEFFF;
+      --royal-green: #3E7C6D;
+      --accent-gold: #d4af37;
+      --text-dark: #2d2d2d;
+      --font-head: 'Playfair Display', serif;
+      --font-body: 'Open Sans', sans-serif;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-body);
+      background: linear-gradient(to bottom, var(--lavender), var(--light-blue));
+      color: var(--text-dark);
+    }
+    header {
+      background: var(--royal-green);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-family: var(--font-head);
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent-gold);
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: url('https://images.unsplash.com/photo-1534850336045-c6c6d287f89e') center/cover no-repeat;
+      color: white;
+      background-attachment: fixed;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      font-family: var(--font-head);
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+    .hero p {
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    .btn {
+      background: var(--accent-gold);
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #b38d20;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      font-family: var(--font-head);
+      color: var(--royal-green);
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--accent-gold);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+    .destinations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .country {
+      flex: 1 1 30%;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+      min-width: 280px;
+    }
+    .country:hover {
+      transform: translateY(-5px);
+    }
+    .country h3 {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: var(--royal-green);
+    }
+    .country p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      height: 220px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: 30px auto;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      margin-bottom: 15px;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .contact-form button {
+      background: var(--accent-gold);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .contact-form button:hover {
+      background: #b38d20;
+    }
+    footer {
+      background: var(--royal-green);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nomadic Trails</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#tours">Tours</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Three Lands. Endless Stories. One Journey.</h2>
+    <p>Explore the culture, nature, and heritage of Africa and Asia.</p>
+    <button class="btn">Explore Tours</button>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Nomadic Trails</h2>
+    <p style="text-align: center; max-width: 800px; margin: auto;">Nomadic Trails invites travelers to journey through the enchanting landscapes of Nigeria, Nepal, and Afghanistan. Rooted in culture and community, each itinerary promises not only scenic beauty but also soulful encounters with local traditions, cuisine, and history. Whether it’s trekking Himalayan paths, exploring ancient Afghan cities, or experiencing the vibrant spirit of Nigeria, your story begins here.</p>
+  </section>
+
+  <section id="tours">
+    <h2 class="section-title">Explore Our Destinations</h2>
+    <div class="destinations">
+      <div class="country">
+        <h3>Nepal</h3>
+        <p>Discover Kathmandu, Namche Bazaar, and serene Everest viewpoints. Buddhist temples, sherpa culture, and snowy peaks await you.</p>
+      </div>
+      <div class="country">
+        <h3>Afghanistan</h3>
+        <p>Experience Herat, Mazar-e-Sharif, and the timeless bazaars. Persian architecture and Silk Road stories enchant every traveler.</p>
+      </div>
+      <div class="country">
+        <h3>Nigeria</h3>
+        <p>Visit Lagos, Yoruba villages, and natural reserves. From Afrobeat music to local cuisine, Nigeria pulses with vibrant life.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tour-packages">
+    <h2 class="section-title">Tour Packages</h2>
+    <div class="destinations">
+      <div class="country">
+        <h3>Nepal: 7-Day Himalayan Trek</h3>
+        <p>Explore Kathmandu, Namche Bazaar, and Everest viewpoints in this scenic trek through the Himalayas. Includes guided tours, accommodation, and meals.</p>
+        <p><strong>Price:</strong> $1,299</p>
+        <button class="btn">Book Now</button>
+      </div>
+      <div class="country">
+        <h3>Afghanistan: 5-Day Heritage Trail</h3>
+        <p>Visit Herat, Kabul, and Mazar-e-Sharif to experience historic mosques, bazaars, and Persian architecture. A cultural immersion journey through Afghan history.</p>
+        <p><strong>Price:</strong> $999</p>
+        <button class="btn">Book Now</button>
+      </div>
+      <div class="country">
+        <h3>Nigeria: 10-Day Cultural Safari</h3>
+        <p>Enjoy the rhythms of Lagos, Yoruba villages, and safaris in Jos National Park. Experience Afrobeat music, dance, and cuisine.</p>
+        <p><strong>Price:</strong> $1,499</p>
+        <button class="btn">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery">
+      <!-- Nepal -->
+      <img src="assets/bodhnath-stupa-scaled.webp" alt="Nepal Temple">
+      <img src="assets/00f17bc9cc02c92963ab735cc60549c8.jpg" alt="Nepal Prayer Flags">
+      <img src="assets/trekking-in-Nepal.jpg" alt="Nepal Trekking">
+      <!-- Afghanistan -->
+      <img src="assets/thediplomat-kabul-city-image.jpg" alt="Afghanistan City">
+      <img src="assets/istockphoto-1909464157-612x612.jpg" alt="Afghan Market">
+      <img src="assets/mazarisharif-balkh-province-afghanistan-05-600nw-2493484377.webp" alt="Afghan Mosque">
+      <!-- Nigeria -->
+      <img src="assets/Bush-Safari-in-Kenya.-Photo-Muraa-African-Studies-1062x531.jpg" alt="Nigeria Safari">
+      <img src="assets/a6dc718a08470ac5157d1f173a22ed15.jpg" alt="Nigerian Dance">
+      <img src="assets/download.jpeg" alt="Lagos Street">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Book Your Adventure</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <select required>
+        <option value="">Select a Destination</option>
+        <option value="nepal">Nepal</option>
+        <option value="afghanistan">Afghanistan</option>
+        <option value="nigeria">Nigeria</option>
+      </select>
+      <textarea placeholder="Message or Questions"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Nomadic Trails. All rights reserved.</p>
+    <p>Crafted with care for cultural explorers worldwide.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
