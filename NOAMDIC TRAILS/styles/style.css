@@ -1,0 +1,182 @@
+:root {
+      --lavender: #E6E6FA;
+      --light-blue: #DDEFFF;
+      --royal-green: #3E7C6D;
+      --accent-gold: #d4af37;
+      --text-dark: #2d2d2d;
+      --font-head: 'Playfair Display', serif;
+      --font-body: 'Open Sans', sans-serif;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-body);
+      background: linear-gradient(to bottom, var(--lavender), var(--light-blue));
+      color: var(--text-dark);
+    }
+    header {
+      background: var(--royal-green);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-family: var(--font-head);
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent-gold);
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: url('https://images.unsplash.com/photo-1534850336045-c6c6d287f89e') center/cover no-repeat;
+      color: white;
+      background-attachment: fixed;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      font-family: var(--font-head);
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+    .hero p {
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    .btn {
+      background: var(--accent-gold);
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #b38d20;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      font-family: var(--font-head);
+      color: var(--royal-green);
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--accent-gold);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+    .destinations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .country {
+      flex: 1 1 30%;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+      min-width: 280px;
+    }
+    .country:hover {
+      transform: translateY(-5px);
+    }
+    .country h3 {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: var(--royal-green);
+    }
+    .country p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      height: 220px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: 30px auto;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      margin-bottom: 15px;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .contact-form button {
+      background: var(--accent-gold);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .contact-form button:hover {
+      background: #b38d20;
+    }
+    footer {
+      background: var(--royal-green);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
